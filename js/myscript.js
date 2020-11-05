@@ -23,7 +23,6 @@ $(document).ready(function(){
   var numGame = alert("Memorizza questi 5 numeri e clicca OK" + " " + arrayRandom);
 
   // passano 30 secondi (prova 3 secondi)
-
   var tempo = setTimeout(inserisciNum,3000);
 
 
@@ -43,23 +42,25 @@ $(document).ready(function(){
         alert("HAI GIA' INSERITO QUESTO NUMERO");
         i--;
 
-        // altrimenti se diverso a num random dell'arrayrandom: hai perso + quanti + quali numeri ha indovinato
+        // altrimenti se diverso a numRandom dell'arrayRandom: hai perso + quanti + quali numeri ha indovinato
       }else if(!arrayRandom.includes(numUtente)){
         console.log("Hai perso! " + "Hai indovinato un totale di " + arrayUtente.length + " numero/i," + "i numeri che hai indovinato sono: " + arrayUtente);
         return;
-        // altrimenti se numero inserito è uguale a num random dell'arrayrandom nuova richiesta prompt + pushalo nell' arrayutente
+
+        // altrimenti se numero inserito è uguale a numRandom dell'arrayRandom pushalo nell' arrayUtente
       }else{
         arrayUtente.push(numUtente);
       }
+      // e ripeti ciclo
       i++;
     } //fine ciclo while
 
-    // se tutti i numeri uguali: hai vinto
+    // se l'inserimento dell'utente va a buon fine per 5 volte: hai vinto
     if(arrayUtente.length === 5){
       console.log("hai vinto! HAI INDOVINATO TUTTI I NUMERI");
     }
 
-  }//fine funzione
+  }//fine funzione inserisciNum
 
 
-});
+}); //fine document ready
