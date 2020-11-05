@@ -5,8 +5,23 @@
 
 
 // genero 5 numeri random e li salvo
+var arrayRandom = [];
+
+for (var i = 0; i < 5; i++) {
+  var numRandom = Math.floor(Math.random() *50) + 1;
+  console.log(numRandom);
+  // se numRandom è uguale a un numero dell'arrayRandom allora non contarlo
+  if(arrayRandom.includes(numRandom)){
+    i--;
+  // altrimenti aggiungilo all'array
+  }else {
+    arrayRandom.push(numRandom);
+  }
+}
+console.log(arrayRandom);
 
 // inserisco i numeri in un alert
+var numGame = alert("Memorizza questi 5 numeri e clicca OK" + " " + arrayRandom);
 
 // passano 30 secondi
 
