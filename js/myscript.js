@@ -23,10 +23,41 @@ console.log(arrayRandom);
 // inserisco i numeri in un alert
 var numGame = alert("Memorizza questi 5 numeri e clicca OK" + " " + arrayRandom);
 
-// passano 30 secondi
+// passano 30 secondi (prova 3 secondi)
 
-// l'utente inserisce in 5 prompt i numeri
+setTimeout(inserisciNum,3000);
 
-// se numeri diversi da alert: hai perso + quanti + quali numeri ha indovinato
+// l'utente inserisce in 5 prompt i numeri e li salvo
+var arrayUtente = [];
 
-// se numeri uguali a alert : hai vinto
+function inserisciNum(tentativi){
+
+  var i = 0;
+  while (i < tentativi) {
+    var numUtente = arrayUtente[i];
+    numUtente = parseInt(prompt("INSERISCI I NUMERI CHE TI RICORDI UNO ALLA VOLTA"));
+
+    // se numero inserito da utente è uguale a num dell arrayUtente non contarlo (ripeti richiesta) + alert
+    if(arrayUtente.includes(numUtente)){
+      alert("HAI GIA' INSERITO QUESTO NUMERO");
+      i--;
+
+    // altrimenti se diverso a num random dell'arrayrandom: hai perso + quanti + quali numeri ha indovinato
+    }else if(!arrayRandom.includes(numUtente)){
+      return "Hai perso! " + "Hai indovinato un totale di " + arrayUtente.length + " numero/i," + "i numeri che hai indovinato sono: " + arrayUtente
+
+    // altrimenti se numero inserito è uguale a num random dell'arrayrandom nuova richiesta prompt + pushalo nell' arrayutente
+    }else{
+      arrayUtente.push(numUtente);
+    }
+    i++;
+  } //fine ciclo while
+
+  // se tutti i numeri uguali: hai vinto
+  if(arrayUtente.length === tentativi){
+    return "hai vinto! HAI INDOVINATO TUTTI I NUMERI"
+  }
+
+} //fine funzione
+
+console.log(inserisciNum(5));
