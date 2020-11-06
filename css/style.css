@@ -4,6 +4,37 @@
   box-sizing: border-box;
 }
 
-.hide{
+body{
+  background-color: lightblue;
+}
+
+.nascondi{
   display: none;
+}
+
+.container{
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#prima-parte{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.start{
+  background-color: pink;
+  color: white;
+  font-size: 30px;
+  padding: 20px;
+  border-radius: 50px;
+}
+
+#random{
+  padding-top: 40px;
+  color: green;
 }
