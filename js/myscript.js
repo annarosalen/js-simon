@@ -17,19 +17,35 @@ $(document).ready(function(){
       arrayRandom.push(numRandom);
     }
   }
-  console.log(arrayRandom);
+
+  $("#random").text(arrayRandom);
+
+  // clicco start scompare bottone e compare arrayrandom
+  $(".start").click(function(){
+    $(".start").hide();
+    $("#random").removeClass("hide");
+    $("#istruzioni").removeClass("hide");
+  });
+
 
   // inserisco i numeri in un alert
-  var numGame = alert("Memorizza questi 5 numeri e clicca OK" + " " + arrayRandom);
+  // var numGame = alert("Memorizza questi 5 numeri e clicca OK" + " " + arrayRandom);
 
-  // passano 30 secondi (prova 3 secondi)
-  var tempo = setTimeout(inserisciNum,3000);
+  // creo funzione per far scomparire i numeri random dopo 30 secondi (3 secondi prova)
+  setTimeout(function(){
+    $("#random").addClass("hide");
+    $("#istruzioni").addClass("hide");
+  },3000)
+
+  // passano 30 secondi (prova 5 secondi)
+  var tempo = setTimeout(inserisciNum,5000);
 
 
   // l'utente inserisce in 5 prompt i numeri e li salvo
   var arrayUtente = [];
 
   function inserisciNum(){
+
 
     var i = 0;
     while (i < 5) {
