@@ -28,10 +28,7 @@ $(document).ready(function(){
   });
 
 
-  // inserisco i numeri in un alert
-  // var numGame = alert("Memorizza questi 5 numeri e clicca OK" + " " + arrayRandom);
-
-  // creo funzione per far scomparire i numeri random dopo 30 secondi (3 secondi prova)
+  // creo funzione per far scomparire i numeri random dopo 5 secondi (3 secondi prova)
   setTimeout(function(){
     $("#random").addClass("hide");
     $("#istruzioni").addClass("hide");
