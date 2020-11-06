@@ -55,8 +55,7 @@ $(document).ready(function(){
 
           // altrimenti se diverso a numRandom dell'arrayRandom: hai perso + quanti + quali numeri ha indovinato
         }else if(!arrayRandom.includes(numUtente)){
-          console.log("Hai perso! " + "Hai indovinato un totale di " + arrayUtente.length + " numero/i," + "i numeri che hai indovinato sono: " + arrayUtente);
-          return;
+          return $("#risultato").text("Hai perso! " + "Hai indovinato un totale di " + arrayUtente.length + " numero/i," + "i numeri che hai indovinato sono: " + arrayUtente);
 
           // altrimenti se numero inserito è uguale a numRandom dell'arrayRandom pushalo nell' arrayUtente
         }else{
@@ -68,12 +67,14 @@ $(document).ready(function(){
 
       // se l'inserimento dell'utente va a buon fine per 5 volte: hai vinto
       if(arrayUtente.length === 5){
-        console.log("hai vinto! HAI INDOVINATO TUTTI I NUMERI");
+        return $("#risultato").text("hai vinto! HAI INDOVINATO TUTTI I NUMERI");
       }
 
     }//fine funzione inserisciNum
 
   }); //fine start click
 
-
+  // creo ciclo per inserire input uno alla volta
+  // var numeroUtente = $(":input #numero-inserito");
+  // console.log(numeroUtente);
 }); //fine document ready
